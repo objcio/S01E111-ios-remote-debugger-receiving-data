@@ -738,7 +738,7 @@ extension NavigationController {
 			for v in viewControllers.last(diffN) {
 				var vc = UIViewController()
 				strongReferences.append(v.render(callback: callback, viewController: &vc))
-				nc.pushViewController(vc, animated: true)
+				nc.pushViewController(vc, animated: diffN == 1)
 			}
 		}
 		assert(viewControllers.count == nc.viewControllers.count)
